@@ -60,8 +60,8 @@ public class UserApiMockTest extends BaseBitbucketMockTest {
 
             final Map<String, ?> queryParams = ImmutableMap.of("filter", "jcitizen",
                     "group","stash-users" , "permission", "ADMIN","start",0,"limit",2);
-            //assertSent(server, getMethod, restApiPath + BitbucketApiMetadata.API_VERSION
-            //        + "/users", queryParams);
+            assertSent(server, getMethod, restApiPath + BitbucketApiMetadata.API_VERSION
+                    + "/users", queryParams);
         } finally {
             server.shutdown();
         }
@@ -80,8 +80,8 @@ public class UserApiMockTest extends BaseBitbucketMockTest {
 
             final Map<String, ?> queryParams = ImmutableMap.of("filter", "blah%20blah",
                     "group","stash-users" , "permission", "ADMIN","start",0,"limit",2);
-            //assertSent(server, getMethod, restApiPath + BitbucketApiMetadata.API_VERSION
-            //        + "/users", queryParams);
+            assertSent(server, getMethod, restApiPath + BitbucketApiMetadata.API_VERSION
+                    + "/users", queryParams);
         } finally {
             baseApi.close();
             server.shutdown();
